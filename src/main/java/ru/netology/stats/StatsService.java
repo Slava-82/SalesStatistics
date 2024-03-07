@@ -38,7 +38,7 @@ public class StatsService {
 
     public long averageSales(long[] sales) {  // средняя сумма продаж в месяц
 
-        long avarageSales = sumSales(sales) / sales.length;
+       long avarageSales = sumSales(sales) / sales.length;
 
         return avarageSales;
     }
@@ -46,9 +46,9 @@ public class StatsService {
     public long sumMonthsAverageMaxSales(long[] sales) {  // количество месяцев, в которых продажи были выше среднего
 
         int month = 0;
-
+        long averageSales = averageSales(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > averageSales(sales)) {
+            if (sales[i] > averageSales) {
 
                 month++;
             }
@@ -59,9 +59,9 @@ public class StatsService {
     public long sumMonthsAverageMinSales(long[] sales) {  // количество месяцев, в которых продажи были ниже среднего
 
         int month = 0;
-
+        long averageSales = averageSales(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < averageSales(sales)) {
+            if (sales[i] < averageSales) {
 
                 month++;
             }
